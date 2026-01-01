@@ -3,7 +3,7 @@
 
 
 # ---------------------------
-# Step 0: Imports
+# Imports
 # ---------------------------
 import pandas as pd
 import numpy as np
@@ -20,8 +20,8 @@ print("imported !")
 # ----------------
 # Load trader-day dataset
 # ---------------------------
-trader_day = pd.read_csv("clean_trader_day.csv")
-
+trader_day = pd.read_csv("datasets/clean_trader_day.csv")
+print("Loaded trader_day dataset with shape:", trader_day.shape)
 
 
 
@@ -59,7 +59,7 @@ print("\nProfitability Rate per Sentiment:\n", profit_rate)
 
 
 
-
+print("\nMerging profitability rate with PnL summary...")
 
 
 
@@ -95,6 +95,8 @@ plt.title("Average Daily Net PnL per Sentiment")
 plt.ylabel("Mean Net PnL")
 plt.xlabel("Market Sentiment")
 
+
+plt.savefig("plots/mean_pnl_per_sentiment.png")
 plt.show()
 
 
@@ -102,7 +104,10 @@ plt.show()
 
 
 
-ANSWER1 = """We analyzed trader performance using the trader_day dataset, which contains one row per trader per day under a specific sentiment (Fear, Neutral, or Greed). Key metrics include daily Net PnL and profitability.
+ANSWER1 = """
+We analyzed trader performance using the trader_day dataset, which contains
+ one row per trader per day under a specific sentiment (Fear, Neutral, or Greed). 
+ Key metrics include daily Net PnL and profitability.
 
 Net PnL Summary per Sentiment:
 
@@ -145,3 +150,10 @@ Statistical testing shows differences are not significant, highlighting large va
 
 """
 print(ANSWER1)
+
+
+
+
+
+
+
